@@ -16,7 +16,7 @@ def utc_offset(event_time):
         return datetime.strftime(datetime_obj, "%Y-%m-%d %H:%M:%S+00:00")
 
 # opend the combined.ics file
-with open("combined.ics", "r") as f:
+with open("my.ics", "r") as f:
     c = Calendar(f.read())
 
 with open('clean_data.json') as json_file:
@@ -34,5 +34,5 @@ with open('clean_data.json') as json_file:
         c.events.add(e)
 
 # append to 'combined.ics'
-with open("combined.ics", "w") as f:
+with open("my.ics", "w") as f:
     f.write(c.serialize())
